@@ -1,32 +1,40 @@
+
 :root{
-  --accent:#2868b8;
-  --accent-2:#1858b8;
-  --muted:#6b7280;
+  --bg: #0b2b1d;
+  --green: #064420;
+  --gold: #D4AF37;
+  --muted: #cbd5cf;
 }
 *{box-sizing:border-box;font-family:Inter, system-ui, Arial, sans-serif}
-body{margin:0;background:#f4f7fb;color:#0f172a}
-.app{display:flex;min-height:100vh}
-.sidebar{width:260px;background:linear-gradient(180deg,var(--accent),var(--accent-2));color:white;padding:28px}
-.sidebar h1{margin:0 0 20px;font-size:22px}
-.menu{list-style:none;padding:0;margin:10px 0}
-.menu li{padding:12px;border-radius:8px;cursor:pointer;margin-bottom:8px}
-.menu li.active{background:rgba(255,255,255,0.12)}
-.container{flex:1;padding:28px}
-.header{display:flex;justify-content:space-between;align-items:center}
-.card{background:white;padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.06);margin-bottom:18px}
-.form-row{display:flex;gap:12px;margin-bottom:12px}
-.input, textarea, select{width:100%;padding:10px;border:1px solid #e6edf3;border-radius:8px}
-.btn{background:var(--accent);color:white;padding:8px 12px;border-radius:8px;border:none;cursor:pointer}
+body{margin:0;background:linear-gradient(180deg,var(--green),var(--bg));color:#0f172a;min-height:100vh}
+.app-shell{display:flex;min-height:100vh;align-items:stretch;color:white}
+.sidebar{width:260px;background:linear-gradient(180deg,var(--green),#03301f);padding:24px;color:white}
+.sidebar h1{margin:0;font-size:22px;color:var(--gold);letter-spacing:0.6px}
+.menu{list-style:none;padding:12px 0;margin:16px 0}
+.menu li{padding:10px;border-radius:8px;cursor:pointer;margin-bottom:8px;color:#eaf6ef}
+.menu li.active{background:rgba(212,175,55,0.12);color:var(--gold);font-weight:600}
+.container{flex:1;padding:20px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));min-height:100vh}
+.card{background:rgba(255,255,255,0.03);padding:16px;border-radius:10px;margin-bottom:14px;color:#e6f0ea;border:1px solid rgba(212,175,55,0.06)}
+.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.input, textarea, select{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:#eaf6ef}
+.form-row{display:flex;gap:12px;margin-bottom:10px}
+.btn{background:var(--gold);color:var(--green);padding:8px 12px;border-radius:8px;border:none;cursor:pointer;font-weight:600}
+.btn-secondary{background:transparent;border:1px solid rgba(212,175,55,0.2);color:var(--gold)}
 .table{width:100%;border-collapse:collapse}
-.table th, .table td{padding:10px;text-align:left;border-bottom:1px solid #eef2f7}
-.actions button{margin-right:8px}
+.table th, .table td{padding:10px;text-align:left;border-bottom:1px solid rgba(255,255,255,0.03);color:#eaf6ef}
 .small{font-size:13px;color:var(--muted)}
-.table .right{text-align:right}
-.btn-danger{background:#ef4444}
-@media(max-width:800px){
-  .app{flex-direction:column}
+.row{display:flex;gap:12px}
+.right{text-align:right}
+.footer-note{font-size:13px;color:var(--muted);margin-top:8px}
+.badge{background:var(--gold);color:var(--green);padding:4px 8px;border-radius:8px;font-weight:700}
+@media(max-width:900px){
+  .app-shell{flex-direction:column}
   .sidebar{width:100%;display:flex;flex-direction:row;gap:12px;overflow:auto;padding:12px}
   .menu{display:flex;gap:8px;flex-wrap:wrap}
   .container{padding:12px}
   .form-row{flex-direction:column}
 }
+.login-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+.auth-card{background:white;color:var(--green);padding:20px;border-radius:10px;max-width:420px;width:100%;box-shadow:0 10px 30px rgba(2,6,23,0.4)}
+.auth-card h2{margin:0 0 12px;color:var(--green)}
+.link{color:var(--gold);cursor:pointer}
